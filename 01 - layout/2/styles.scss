@@ -1,0 +1,36 @@
+@import "stylesA.scss";
+//@import "stylesB.scss";
+
+
+$important: darken($base, 35%);
+$warning: lighten($base, 35%);
+
+
+.container{
+    display:inline-flex;
+    flex-direction: column;
+}
+.base{
+ background-color: $base;
+}
+.important{
+ background-color: $important;
+}
+.warning{
+ background-color: $warning;
+}
+.principal-font{
+ font-family: $principal-font;
+}
+.secondary-font{
+ font-family: $secondary-font;
+}
+.box{
+    border: 1px solid black;
+    border-radius: $border-radius;
+    padding: 30px;
+}
+.shadow{
+    box-shadow: $box-shadow;
+
+}

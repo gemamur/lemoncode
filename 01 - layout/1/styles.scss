@@ -1,0 +1,48 @@
+body{
+    margin:0;
+}
+.container-1{
+    display: flex;
+    flex-direction: row;
+    $base-color:red;
+    $base-height:90px;
+    $base-width:80px;
+
+    & .box{
+        height: $base-height;
+        width: $base-width;
+        border-radius: 3px;
+        margin: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .base-color{
+        height: $base-height;
+        width: $base-width*1.5;
+        background-color: $base-color;
+        color: invert($base-color);
+    }
+
+    @for $i from 1 through 4 {
+        & .darken-#{$i} {
+          background-color: darken($base-color, $i * 10%);
+          & > .color-box-text{
+            color: invert(darken($base-color, $i * 10%));
+          }
+        }
+    }
+    @for $i from 1 through 4 {
+        & .lighten-#{$i} {
+          background-color: lighten($base-color, $i * 10%);
+          & > .color-box-text{
+            color: invert(lighten($base-color, $i * 10%));
+          }
+        }
+    }
+}
+
+
+
+

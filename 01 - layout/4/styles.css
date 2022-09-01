@@ -1,0 +1,55 @@
+html{
+    margin:0;
+    font-family: 'Helvetica', sans-serif;
+}
+.container{
+    border: 1px solid grey;
+    padding-bottom: 10px;
+    width: 290px;
+    display: grid;
+    grid-template-columns: 10px 90px 90px 90px 10px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "image image image image image"
+    ". title . . ."
+    ". text1 text1 text1 ."
+    ". . published published ."
+    ". button button button .";
+}
+
+.image{
+    grid-area:image;
+}
+.image img{
+    width:100%;
+}
+.title{
+    grid-area:title;
+}
+h1{
+    font-weight: 100;
+}
+.text{
+    grid-area:text1;
+}
+.published{
+    grid-area: published;
+}
+.published p{
+    font-weight: 300;
+    font-size: small;
+}
+.published p span{
+    font-weight: 100;
+    color:#17e647;
+}
+.container button{
+    grid-area: button;
+    background-color: #17e647;
+    border:none;
+    border-radius: 2px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size:medium;
+}

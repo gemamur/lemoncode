@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: row;
+}
+.container-1 .box {
+  height: 90px;
+  width: 80px;
+  border-radius: 3px;
+  margin: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-1 .base-color {
+  height: 90px;
+  width: 120px;
+  background-color: red;
+  color: aqua;
+}
+.container-1 .darken-1 {
+  background-color: #cc0000;
+}
+.container-1 .darken-1 > .color-box-text {
+  color: #33ffff;
+}
+.container-1 .darken-2 {
+  background-color: #990000;
+}
+.container-1 .darken-2 > .color-box-text {
+  color: #66ffff;
+}
+.container-1 .darken-3 {
+  background-color: #660000;
+}
+.container-1 .darken-3 > .color-box-text {
+  color: #99ffff;
+}
+.container-1 .darken-4 {
+  background-color: #330000;
+}
+.container-1 .darken-4 > .color-box-text {
+  color: #ccffff;
+}
+.container-1 .lighten-1 {
+  background-color: #ff3333;
+}
+.container-1 .lighten-1 > .color-box-text {
+  color: #00cccc;
+}
+.container-1 .lighten-2 {
+  background-color: #ff6666;
+}
+.container-1 .lighten-2 > .color-box-text {
+  color: #009999;
+}
+.container-1 .lighten-3 {
+  background-color: #ff9999;
+}
+.container-1 .lighten-3 > .color-box-text {
+  color: #006666;
+}
+.container-1 .lighten-4 {
+  background-color: #ffcccc;
+}
+.container-1 .lighten-4 > .color-box-text {
+  color: #003333;
+}/*# sourceMappingURL=styles.css.map */

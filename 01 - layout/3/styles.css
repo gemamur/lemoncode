@@ -1,0 +1,33 @@
+html{
+    margin:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    width:100%;
+    font-size: 1.3em;
+    font-style: bold;
+    padding-bottom: 8px;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color:#15707a;
+    color:white;
+    justify-content: space-between;
+}
+nav .button{
+    padding: 20px;
+}
+.button:hover{
+    background-color: #0a3d42;
+}
+
+@media screen and (max-width:600px) {
+    nav{
+        flex-direction: column;
+        box-sizing: border-box;
+        align-content: center;
+        text-align: center;
+    }
+    
+}
