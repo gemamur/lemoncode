@@ -127,6 +127,15 @@ main{
                 min-width: 225px;
             }
         }
+
+        & .first, & .second{
+            & .item{
+                & img{
+                    min-width: 250px;
+                }
+            }
+    
+        }
     }
     
 }
