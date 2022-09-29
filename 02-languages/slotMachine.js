@@ -25,7 +25,6 @@ class SlothMachine {
         result = "Congratulations!!! You won "+cont+" coins!!!";
         cont = 0;
     }
-    console.log(bool1 , bool2 , bool3);
     // console.log(result); //si quieres que salga la respuesta así al lanzar la llamada masivamente descomenta el console log
     return result;
   }
