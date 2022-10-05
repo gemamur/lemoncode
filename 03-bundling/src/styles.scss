@@ -1,0 +1,15 @@
+$color: orange;
+$background: #101010;
+$size: 50px;
+
+.hello-text{
+    background: $background;
+    color: $color;
+    font-size: $size;
+    display: table;
+    text-transform: uppercase;
+}
+
+img{
+    width: 376px;
+}
