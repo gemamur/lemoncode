@@ -14,9 +14,8 @@ export const HelloWorld: React.FC = () => {
 };
 
 export const Img: React.FC = ()=>{
-    const img = document.createElement('img');
-    img.src = logo;
-
-    document.getElementById('imgCont').appendChild(img);
+    return (
+        <img src={logo} />
+      );
 
 }
