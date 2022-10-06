@@ -4,10 +4,14 @@ type Book = {
 }
 const bookRead = (books:Book[], titleToSearch:string):boolean => {
     // Implementation here
-    let isread:boolean = true;
+    
     const book = books.find(element => element.title == titleToSearch);
-    book?.title ? isread = book.isRead : isread = false;
-    return isread;
+    if(book?.isRead){
+      return book.isRead;
+    }else{
+      return false;
+    }
+
   }
   
   // Ejemplo:

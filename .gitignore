@@ -12,3 +12,4 @@ practicas/01-javascript-fundamentals/reverseText.js
 practicas/01-javascript-fundamentals/subsets.js
 practicas/01-javascript-fundamentals/values.js
 .vscode/launch.json
+node_modules

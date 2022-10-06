@@ -10,24 +10,24 @@
 
 // "Good luck next time!!".
 
-let cont = 0;
-let bool1, bool2, bool3;
+
 class SlothMachine {
+constructor(){
+  this.cont = 0;
+}
   play = () => {
-    cont++;
-    bool1 = Math.floor(Math.random()*2);
-    bool2 = Math.floor(Math.random()*2);
-    bool3 = Math.floor(Math.random()*2);
+    this.cont++;
     
     let result = "Good luck next time!!";
 
-    if(bool1 && bool2 && bool3){
-        result = "Congratulations!!! You won "+cont+" coins!!!";
-        cont = 0;
+    if(this.generateRandom() && this.generateRandom() && this.generateRandom()){
+        result = "Congratulations!!! You won "+this.cont+" coins!!!";
+        this.cont = 0;
     }
-    // console.log(result); //si quieres que salga la respuesta así al lanzar la llamada masivamente descomenta el console log
+    console.log(result); //si quieres que salga la respuesta así al lanzar la llamada masivamente descomenta el console log
     return result;
   }
+  generateRandom = () => Math.random()<0.3;
 }
 
 const machine1 = new SlothMachine();
