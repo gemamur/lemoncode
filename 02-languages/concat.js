@@ -11,6 +11,6 @@ console.log(concat([1,2,3], [4,5,6]));
 
 const concatmultiple = (...args) => {
     
-    return args.reduce((a, b) => [...a, ...b], []);
+    return args.reduce((a, b) => concat(a, b), []);
 }
 console.log(concatmultiple([1,2,3,4], [5,6,7], [8,9], [10]));

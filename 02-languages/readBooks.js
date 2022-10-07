@@ -1,16 +1,22 @@
-var bookIsRead = function (books, titleToSearch) {
+const isBookRead = (books, titleToSearch) => {
+    // Implementation here
     
-    var isread = true;
-    var book = books.find(function (element) { return element.title == titleToSearch; });
-    (book === null || book === void 0 ? void 0 : book.title) ? isread = book.isRead : isread = false;
-    return isread;
-};
-// Ejemplo:
-var books = [
+    const book = books.find(element => element.title == titleToSearch);
+    if(book?.isRead){
+      return book.isRead;
+    }else{
+      return false;
+    }
+
+  }
+  
+  // Ejemplo:
+  var books = [
     { title: "Harry Potter y la piedra filosofal", isRead: true },
     { title: "Canción de hielo y fuego", isRead: false },
     { title: "Devastación", isRead: true },
-];
-console.log(bookIsRead(books, "Devastación")); // true
-console.log(bookIsRead(books, "Canción de hielo y fuego")); // false
-console.log(bookIsRead(books, "Los Pilares de la Tierra")); // false
+  ];
+  
+  console.log(bookRead(books, "Devastación")); // true
+  console.log(bookRead(books, "Canción de hielo y fuego")); // false
+  console.log(bookRead(books, "Los Pilares de la Tierra")); // false

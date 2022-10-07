@@ -12,13 +12,11 @@
 
 
 class SlothMachine {
-constructor(){
-  this.cont = 0;
-}
-  play = () => {
+cont: number = 0;
+  play = ():string => {
     this.cont++;
     
-    let result = "Good luck next time!!";
+    let result:string = "Good luck next time!!";
 
     if(this.generateRandom() && this.generateRandom() && this.generateRandom()){
         result = "Congratulations!!! You won "+this.cont+" coins!!!";
@@ -27,7 +25,7 @@ constructor(){
     console.log(result); //si quieres que salga la respuesta así al lanzar la llamada masivamente descomenta el console log
     return result;
   }
-  generateRandom = () => Math.random()<0.3;
+  generateRandom = ():boolean => Math.random()<0.3;
 }
 
 const machine1 = new SlothMachine();
