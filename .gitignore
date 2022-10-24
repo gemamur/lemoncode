@@ -1,15 +1,3 @@
-practicas/01-javascript-fundamentals/biggestWord.js
-practicas/01-javascript-fundamentals/califications.js
-practicas/01-javascript-fundamentals/checkArguments.js
-practicas/01-javascript-fundamentals/cloneMerge.js
-practicas/01-javascript-fundamentals/deepEqual.js
-practicas/01-javascript-fundamentals/dices.js
-practicas/01-javascript-fundamentals/includes.js
-practicas/01-javascript-fundamentals/index.html
-practicas/01-javascript-fundamentals/primes.js
-practicas/01-javascript-fundamentals/readBooks.js
-practicas/01-javascript-fundamentals/reverseText.js
-practicas/01-javascript-fundamentals/subsets.js
-practicas/01-javascript-fundamentals/values.js
+practicas/
 .vscode/launch.json
 node_modules
