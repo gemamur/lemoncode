@@ -1,0 +1,15 @@
+#navbar{
+    background-color: #ff4081;
+    display:grid;
+    grid-template-columns: 80px 130px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    padding-left:10px;
+    width: 60px;
+}
+.navbar-title{
+    font-weight: bold;
+    font-size: large;
+}

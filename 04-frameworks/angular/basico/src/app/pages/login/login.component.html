@@ -1,0 +1,23 @@
+<div class="content">
+    <mat-card class="card">
+        <mat-card-content>
+            <form #login="ngForm" (ngSubmit)="onSubmit()">
+                <mat-card-title>
+                    Login
+                </mat-card-title>
+                <mat-error *ngIf="!loginValid">Usuario o contraseña inválido</mat-error>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="usuario" [(ngModel)]="usuario" name="usuario" required>
+                    <mat-error>Usuario requerido</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <input matInput type="password" placeholder="contraseña" [(ngModel)]="password" name="password" required>
+                    <mat-error>Contraseña requerida</mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="accent" [disabled]="!login.form.valid">Entrar</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+

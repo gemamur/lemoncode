@@ -1,0 +1,21 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.card{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+  }
+  
+  mat-form-field {
+    display: block;
+    padding-top: 10px;
+  }

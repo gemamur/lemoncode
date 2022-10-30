@@ -1,0 +1,29 @@
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left-col{
+    display: grid;
+    grid-template-columns: 1fr 20px;
+    justify-content: center;
+    align-content: center;
+
+    & img{
+        width: 100%;
+    }
+}
+
+.right-col{
+    font-size: 3.5em;
+    line-height: 200px;
+    text-align: left;
+    display: grid;
+    align-items: center;
+    justify-content: baseline;
+
+    & .img-angular{
+        width:200px;
+    }
+}

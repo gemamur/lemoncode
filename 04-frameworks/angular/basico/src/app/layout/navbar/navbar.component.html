@@ -1,0 +1,9 @@
+<div id="navbar">
+    <div class="logo">
+        <img src="https://www.svgrepo.com/show/327335/logo-angular.svg" alt="logo-angular" />
+    </div>
+    <div class="navbar-title">AnguLab</div>
+    <app-publicheader *ngIf="!getUserLogged()"></app-publicheader>
+    <app-privateheader *ngIf="getUserLogged()"></app-privateheader>
+</div>
+
