@@ -14,9 +14,7 @@ export interface CharacterEntityApi {
     url:string
   },
   image:string,
-  episode:[
-    string
-  ],
+  episode:string[],
   url:string,
   created: string
 }
