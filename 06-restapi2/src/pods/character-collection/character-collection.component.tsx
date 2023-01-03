@@ -7,6 +7,7 @@ import * as classes from './character-collection.styles';
 interface Props {
   characterCollection: CharacterEntityVm[];
   onCreateCharacter: () => void;
+  onEdit: (id: number) => void;
   onDelete: (id: number) => void;
   onDetail: (id: number) => void;
 }
@@ -14,7 +15,7 @@ interface Props {
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
   props
 ) => {
-  const { characterCollection, onCreateCharacter, onDelete, onDetail } = props;
+  const { characterCollection, onCreateCharacter, onEdit, onDelete, onDetail } = props;
 
   return (
     <div className={classes.root}>
@@ -25,7 +26,7 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
       <ul className={classes.list}>
         {characterCollection.map((character) => (
           <li key={character.id}>
-            <CharacterCard character={character} onDelete={onDelete} onDetail={onDetail} />
+            <CharacterCard character={character} onEdit={onEdit} onDelete={onDelete} onDetail={onDetail} />
           </li>
         ))}
       </ul>

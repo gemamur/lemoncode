@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
-import { linkRoutes } from 'core/router';
+import { linkRoutes, editRoutes } from 'core/router';
 import { deleteCharacter } from './api';
 import { useCharacterCollection } from './character-collection.hook';
 import { CharacterCollectionComponent } from './character-collection.component';
@@ -27,10 +27,15 @@ export const CharacterCollectionContainer = () => {
     history.push(linkRoutes.detailCharacter(id));
   }
 
+  const handleEdit = async (id:number) => {
+    history.push(editRoutes.editCharacter(id));
+  }
+
   return (
     <CharacterCollectionComponent
       characterCollection={characterCollection}
       onCreateCharacter={handleCreateCharacter}
+      onEdit={handleEdit}
       onDelete={handleDelete}
       onDetail={handleDetail}
     />

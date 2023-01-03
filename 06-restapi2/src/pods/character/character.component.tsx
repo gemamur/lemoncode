@@ -1,8 +1,15 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Formik, Form } from 'formik';
+import {
+  TextFieldComponent,
+  SelectComponent,
+  RatingComponent,
+} from 'common/components';
+import { Button } from '@material-ui/core';
+import { formValidation } from './character.validations';
 import { Character } from './character.vm';
 import * as classes from './character.styles';
-import { Button, Card, CardHeader, CardContent, CardMedia } from '@material-ui/core';
+import { Lookup } from 'common/models';
 
 interface Props {
   character: Character;
@@ -12,30 +19,30 @@ interface Props {
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { character, onSave } = props;
 
-  const history = useHistory();
-
-  const handleBack = (e) => {
-    e.preventDefault();
-    history.goBack();
-  }
-
   return (
-    <div className={classes.cardcontainer}>
-      
-      <Card>
-        <Button variant="contained" color="primary" onClick={handleBack}>Go Back</Button>
-      
-        <CardHeader title= {character.name} />
-        <CardMedia
-              image={character.picture}
-              title={character.name}
-              style={{ height: 0, paddingTop: '56.25%' }}
-            />
-        <CardContent>
-          <div>Species: {character.species}</div>
-          <div>Dead or alive: {character.status}</div>        
-        </CardContent>
-      </Card>
-    </div>
+    <Formik
+      onSubmit={onSave}
+      initialValues={character}
+      enableReinitialize={true}
+      validate={formValidation.validateForm}
+    >
+      {() => (
+        <Form className={classes.root}>
+          <TextFieldComponent name="name" label="Name" />
+          <TextFieldComponent name="address" label="Address" />
+          <RatingComponent name="rating" max={5} />
+          <TextFieldComponent
+            name="description"
+            label="Description"
+            multiline={true}
+            rows={3}
+            rowsMax={5}
+          />
+          <Button type="submit" variant="contained" color="primary">
+            Save
+          </Button>
+        </Form>
+      )}
+    </Formik>
   );
 };

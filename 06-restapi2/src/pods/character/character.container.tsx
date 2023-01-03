@@ -8,14 +8,9 @@ import { CharacterComponent } from './character.component';
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(createEmptyCharacter());
-  //const [cities, setCities] = React.useState<Lookup[]>([]);
-  const { id }:any = useParams(); //no se por qué peta si le quito el :any
+  const { id }:any = useParams();
   const history = useHistory();
 
-  // const handleLoadCityCollection = async () => {
-  //   const apiCities = await api.getCities();
-  //   setCities(apiCities);
-  // };
 
   const handleLoadCharacter = async () => {
     const apiCharacter = await api.getCharacter(id);
@@ -26,7 +21,6 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     if (id) {
       handleLoadCharacter();
     }
-    // handleLoadCityCollection();
   }, []);
 
   const handleSave = async (character: Character) => {
@@ -39,5 +33,5 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     }
   };
 
-  return <CharacterComponent character={character} onSave={handleSave} />;
+  return <CharacterComponent character={character}  onSave={handleSave} />;
 };
