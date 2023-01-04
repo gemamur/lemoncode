@@ -4,9 +4,17 @@ import { mockCharacterCollection } from './character-collection.mock-data';
 
 let characterCollection = [...mockCharacterCollection];
 
+const url = "/api/characters";
+
 
 export const getCharacterCollection = async (): Promise<CharacterEntityApi[]> => {
-  return characterCollection;
+  return fetch(url).then((response)=> {
+    if(response.ok){
+      return response.json();
+    }else{
+      throw new Error(response.statusText);
+    }
+  })
 };
 
 export const deleteCharacter = async (id: number): Promise<boolean> => {

@@ -14,7 +14,7 @@ export const switchRoutes: SwitchRoutes = {
   characterCollection: '/characters',
   createCharacter: '/characters/create',
   editCharacter: '/character-edit/:id',
-  detailCharacter: '/character/:id',
+  detailCharacter: '/characters/:id',
 };
 
 type NavigationFunction = (id: number) => string;

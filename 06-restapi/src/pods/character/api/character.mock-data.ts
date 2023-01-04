@@ -48,13 +48,3 @@ export const mockCharacterCollection: Character[] = [
   },
 ];
 
-export const mockCities: Lookup[] = [
-  {
-    id: 'Seattle',
-    name: 'Seattle',
-  },
-  {
-    id: 'New York',
-    name: 'New York',
-  },
-];

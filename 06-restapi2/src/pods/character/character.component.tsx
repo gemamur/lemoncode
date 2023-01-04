@@ -2,14 +2,11 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import {
   TextFieldComponent,
-  SelectComponent,
-  RatingComponent,
 } from 'common/components';
-import { Button } from '@material-ui/core';
+import { Button, RadioGroup, FormControlLabel, Radio, FormLabel } from '@material-ui/core';
 import { formValidation } from './character.validations';
 import { Character } from './character.vm';
 import * as classes from './character.styles';
-import { Lookup } from 'common/models';
 
 interface Props {
   character: Character;
@@ -29,14 +26,27 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
       {() => (
         <Form className={classes.root}>
           <TextFieldComponent name="name" label="Name" />
-          <TextFieldComponent name="address" label="Address" />
-          <RatingComponent name="rating" max={5} />
+          <TextFieldComponent name="picture" label="Image" />
+          <TextFieldComponent name="species" label="species"/>
+          <FormLabel id="status">Dead or Alive</FormLabel>
+          <RadioGroup
+            row
+            aria-labelledby="status-label"
+            defaultValue="alive"
+            name="status"
+            value={character.status}
+          >
+          <FormControlLabel value="Alive" control={<Radio />} label="Alive" />
+          <FormControlLabel value="Dead" control={<Radio />} label="Dead" />
+          <FormControlLabel value="unknown" control={<Radio />} label="unknown" />
+          </RadioGroup>
+
           <TextFieldComponent
-            name="description"
-            label="Description"
+            name="bestsentences"
+            label="Best Sentences"
             multiline={true}
-            rows={3}
-            rowsMax={5}
+            minRows={3}
+            maxRows={5}
           />
           <Button type="submit" variant="contained" color="primary">
             Save

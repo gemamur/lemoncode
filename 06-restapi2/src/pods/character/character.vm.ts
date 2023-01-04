@@ -5,6 +5,7 @@ export interface Character {
   status: string;
   species: string;
   type: string;
+  bestsentences:string[];
 }
 
 export const createEmptyCharacter = (): Character => ({
@@ -14,4 +15,5 @@ export const createEmptyCharacter = (): Character => ({
   status:  '',
   species:  '',
   type:  '',
+  bestsentences: [''],
 });

@@ -25,7 +25,7 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
 
   return (
     <Card>
-      <CardHeader onClick={() => onDetail(character.id)}
+      <CardHeader
         avatar={<Avatar className={classes.avatar} aria-label="Character">{character.species}</Avatar>}
         title={character.name}
         subheader={character.type}
