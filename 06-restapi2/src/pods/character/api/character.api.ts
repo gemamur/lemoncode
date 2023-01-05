@@ -1,9 +1,7 @@
 import { Character } from './character.api-model';
-import { Lookup } from 'common/models';
-import { mockCharacterCollection } from './character.mock-data';
 
 
-let character: any;
+
 const url = "/api/characters";
 
 export const getCharacter = async (id: number): Promise<Character> => {
@@ -17,6 +15,14 @@ export const getCharacter = async (id: number): Promise<Character> => {
 };
 
 export const saveCharacter = async (character: Character): Promise<boolean> => {
+  console.log(character);
+  await fetch(`${url}/${character.id}`, { 
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(character),
+});
   return true;
 };
 

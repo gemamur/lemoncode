@@ -32,7 +32,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
           <RadioGroup
             row
             aria-labelledby="status-label"
-            defaultValue="alive"
+            defaultValue="Alive"
             name="status"
             value={character.status}
           >
