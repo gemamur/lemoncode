@@ -1,3 +1,5 @@
+import { TimelineContent } from "@material-ui/lab";
+
 export interface Character {
   id: number;
   picture: string;

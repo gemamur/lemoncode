@@ -15,9 +15,9 @@ export const getCharacter = async (id: number): Promise<Character> => {
 };
 
 export const saveCharacter = async (character: Character): Promise<boolean> => {
-  console.log(character);
+  
   await fetch(`${url}/${character.id}`, { 
-  method: 'POST',
+  method: character.id!=0 ? 'PUT':'POST',
   headers: {
     'Content-Type': 'application/json',
   },

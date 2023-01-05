@@ -17,11 +17,10 @@ interface Props {
   character: CharacterEntityVm;
   onEdit: (id:number) => void;
   onDelete: (id: number) => void;
-  onDetail: (id: number) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { character, onEdit, onDelete, onDetail } = props;
+  const { character, onEdit, onDelete } = props;
 
   return (
     <Card>
@@ -30,7 +29,7 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         title={character.name}
         subheader={character.type}
       />
-      <CardContent  onClick={() => onDetail(character.id)}>
+      <CardContent>
         <div className={classes.content}>
           <CardMedia
             image={character.picture}
