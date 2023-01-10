@@ -1,7 +1,7 @@
 import { TimelineContent } from "@material-ui/lab";
 
 export interface Character {
-  id: number;
+  id: string;
   picture: string;
   name: string;
   status: string;
@@ -11,7 +11,7 @@ export interface Character {
 }
 
 export const createEmptyCharacter = (): Character => ({
-  id: 0,
+  id: '',
   picture: '',
   name:  '',
   status:  '',

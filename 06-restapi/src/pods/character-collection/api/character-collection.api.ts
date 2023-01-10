@@ -8,30 +8,15 @@ let characterCollection:CharacterEntityApi[];
 const url = "https://rickandmortyapi.com/api/character";
 
 export const getCharacterCollection = async (): Promise<CharacterEntityApi[]> => {
-    await fetch(url).then((response) => response.json())
-    .then((data) => {
-      characterCollection = data.results;
-    })
-    .catch((error) => {
-      console.error('Error:', error);
+
+    return fetch(url).then((response)=> {
+      if(response.ok){
+        return response.json().then((data) => data.results);
+      }else{
+        throw new Error(response.statusText);
+      }
     });
-    return characterCollection;
-  };
-  // const response = await fetch(url);
-  // if(response.ok){
-  //   return await response.json();
-  // }else{
-  //   throw new Error("Error!");
-  // }
-  // /******************************** */
-  //   return fetch(url).then((response)=> {
-  //     if(response.ok){
-  //       return response.json();
-  //     }else{
-  //       throw new Error(response.statusText);
-  //     }
-  //   });
-  //   };
+    };
 
 export const deleteCharacter = async (id: number): Promise<boolean> => {
   characterCollection = characterCollection.filter((h) => h.id !== id);
