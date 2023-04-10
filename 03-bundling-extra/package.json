@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "run-p -l npm run type-check:watch start-dev",
+    "start": "run-p -l type-check:watch start-dev",
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "rimraf dist run-p -l type-check build:prod",
     "build:prod": "webpack --config webpack.prod.js",
