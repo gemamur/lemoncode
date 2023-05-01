@@ -1,8 +1,8 @@
 <div id="navbar">
     <div class="logo">
-        <img src="https://www.svgrepo.com/show/327335/logo-angular.svg" alt="logo-angular" />
+        <a routerLink="/"><img src="https://www.svgrepo.com/show/327335/logo-angular.svg" alt="logo-angular" /></a>
     </div>
-    <div class="navbar-title">AnguLab</div>
+    <div class="navbar-title"><a routerLink="/" class="navbar-title">AnguLab</a></div>
     <app-publicheader *ngIf="!getUserLogged()"></app-publicheader>
     <app-privateheader *ngIf="getUserLogged()"></app-privateheader>
 </div>
