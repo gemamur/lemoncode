@@ -7,15 +7,17 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UserGuard } from './user.guard';
+import { LoggedGuard } from './logged.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'gallery', component: GalleryComponent},
-  { path: 'crud', component: CrudComponent},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'login', canActivate:[LoggedGuard], component: LoginComponent},
+  { path: 'dashboard', canActivate:[UserGuard], component: DashboardComponent},
+  { path: 'gallery', canActivate:[UserGuard], component: GalleryComponent},
+  { path: 'crud', canActivate:[UserGuard], component: CrudComponent},
+  { path: 'profile', canActivate:[UserGuard], component: ProfileComponent}
   
 ];
 
