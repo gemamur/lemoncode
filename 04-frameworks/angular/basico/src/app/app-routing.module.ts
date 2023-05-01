@@ -12,7 +12,7 @@ import { LoggedGuard } from './logged.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'about', component: AboutComponent},
+  { path: 'about', canActivate:[LoggedGuard], component: AboutComponent},
   { path: 'login', canActivate:[LoggedGuard], component: LoginComponent},
   { path: 'dashboard', canActivate:[UserGuard], component: DashboardComponent},
   { path: 'gallery', canActivate:[UserGuard], component: GalleryComponent},
